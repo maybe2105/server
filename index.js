@@ -7,7 +7,7 @@ import classRoutes from "./routes/class.js";
 
 const app = exrpess();
 
-app.use(exrpess.json({ limit: "30mb", extended: true }));
+app.use(exrpess.json({ limit: "30mb", extended: false }));
 app.use(exrpess.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
@@ -28,3 +28,5 @@ mongoose
   .catch((error) => {
     console.log(error.message);
   });
+
+export default app;

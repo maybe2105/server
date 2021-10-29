@@ -12,6 +12,13 @@ export const getClass = async (req, res) => {
 
 export const createClass = async (req, res) => {
   const classInfo = req.body;
+  if (!classInfo.name)
+    res.status(409).json({ message: "Tên lớp không hợp lệ" });
+  if (!classInfo.teacher)
+    res.status(409).json({ message: "Tên giáo viên không hợp lệ" });
+  if (!classInfo.avatar)
+    res.status(409).json({ message: "Link ảnh không hợp lệ" });
+
   const newClass = new ClassModel(classInfo);
 
   try {

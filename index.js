@@ -12,7 +12,7 @@ app.use(exrpess.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/class", classRoutes);
-app.use(function (req, res, next) {
+app.use(function (req, res) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header(
     "Access-Control-Allow-Headers",
